@@ -1,6 +1,3 @@
-## 演示
-![滑块插件演示](https://img-blog.csdnimg.cn/2019052417041397.gif#pic_center#pic_center)
-
 ## 使用
     请查看/demo/demo.html
 
