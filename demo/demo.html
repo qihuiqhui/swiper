@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="http://at.alicdn.com/t/font_1209323_47e72yp3oa.css">
+  <title>swiper</title>
+</head>
+
+<body>
+  <div class="npm-com-swiper">
+    <div id="slider">
+      <ul class="swiper-item-container">
+        <!-- <li class="swiper-item" v-for="(item, index) in dataArr" :key="index"><img :src="item.img" alt=""></li> -->
+        <li class="swiper-item"><img src="./images/1.jpg" /></li>
+        <li class="swiper-item"><img src="./images/2.jpg" /></li>
+        <li class="swiper-item"><img src="./images/3.jpg" /></li>
+        <li class="swiper-item"><img src="./images/menu1.png" /></li>
+        <li class="swiper-item"><img src="./images/menu2.png" /></li>
+        <li class="swiper-item"><img src="./images/menu3.png" /></li>
+      </ul>
+      <div class="swiper-button-prev"><</div>
+      <div class="swiper-button-next">></div>
+      <div class="indicator-container"></div>
+      </div>
+    </div>
+    <script src="../dist/swiper.js"></script>
+    <script>
+      let _this = this;
+      new Swiper({
+        swiper: 'slider',
+        item: '.swiper-item',
+        autoplay: false,
+        loop: true,
+        duration: 3000,
+        change(index) { // 切换时候使用，获取当前切换的index;
+          console.log(index, '获取当前切换的index');
+        },
+        onClickTo(index) { // loop: true,添加绑定事件,必须使用onClickTo; false:可以使用@click & onClickTo;
+          // _this.goTo(index)
+          console.log(index)
+        },
+        pagination: { // 分页使用，bullets, fraction两种模式;
+          el: '.indicator-container',
+          type: 'bullets',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
+</body>
+</html>
